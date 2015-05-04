@@ -1,0 +1,32 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Mothers Ruin\n              \n              ",
+      "location": "Soho\n              \n              \n              \n              \n              \n              "
+    },
+    {
+      "name": "Lorenzos Place\n              ",
+      "location": "Bushwick\n              \n              \n              ",
+      "id": 2
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "restaurantId": 1,
+      "name": "hamburger",
+      "price": 10,
+      "order_count": 0,
+      "image_url": "http://kleberly.com/data_images/wallpapers/7/277047-hamburger.jpg"
+    },
+    {
+      "id": 2,
+      "restaurantId": 2,
+      "name": "cheeseburger",
+      "price": 12,
+      "order_count": 0,
+      "image_url": "http://kleberly.com/data_images/wallpapers/7/277047-hamburger.jpg"
+    }
+  ]
+}

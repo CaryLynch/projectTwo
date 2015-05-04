@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurants</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/semantic-ui/dist/semantic.css">
+</head>
+<body>
+
+  <div id="main-container">
+  </div>
+
+  <div id="about-developer">
+  <button onclick=location.href="#/developer" data-action='about' class='ui button small green'>About the Developer</button>
+  </div>
+
+  <script type="text/template" data-id="developer_template">
+    <main class=" ui page grid">
+      <section class="eight column wide centered">
+        <h1 class="heading">About the Developer</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </section>
+    </main>
+  </script>
+
+  <script type="text/template" data-id="rest_template">
+    <main class="ui page grid">
+      <section class="eight column wide centered">
+        <h1 class="heading">My Restaurants</h1>
+        <table class="ui table celled striped">
+          <thead>
+            <th>Restaurant Name</th>
+            <th>Location</th>
+            <th>Actions</th>
+          </thead>
+          <tbody>
+          {{#restaurants}}
+            <tr data-id='{{id}}'>
+              <td data-attr='name' contenteditable='true' >{{name}}
+              </td>
+
+              <td data-attr='location' contenteditable='true'>{{location}}
+              </td>
+              <td>
+                <button onclick=location.href="#/restaurants/{{id}}" data-action='save' class='ui button small green'>Save</button>
+                <button onclick=location.href="#/restaurants/{{id}}" data-action='update' class='ui button small blue'>Update</button>
+                <button onclick=location.href="#/restaurants" data-action='delete' class='ui button small red'>Delete</button>
+                <button onclick=location.href="#/menu/{{id}}" data-action='menu' class='ui button small grey'>Menu</button>
+              </td>
+            </tr>
+          {{/restaurants}}
+          </tbody>
+        </table>
+        <a class="ui label blue">
+          <i onclick=location.href="#/restaurants" class="plus icon"></i>Add New Restaurant
+        </a>
+      </section>
+    </main>
+  </script>
+
+
+<script type="text/template" data-id="rest_row_template">
+              <tr data-id='{{id}}'>
+              <td data-attr='name' contenteditable='true' >{{name}}
+              </td>
+
+              <td data-attr='location' contenteditable='true'>{{location}}
+              </td>
+              <td>
+                <button onclick=location.href="#/restaurants/{{id}}" data-action='save' class='ui button small green'>Save</button>
+                <button onclick=location.href="#/restaurants/{{id}}" data-action='update' class='ui button small blue'>Update</button>
+                <button onclick=location.href="#/restaurants" data-action='delete' class='ui button small red'>Delete</button>
+                <button onclick=location.href="#/menu/{{id}}" data-action='menu' class='ui button small grey'>Menu</button>
+              </td>
+            </tr>
+</script>
+
+
+  <script type="text/template" data-id="item_template">
+    <main class="ui page grid">
+      <section class="eight column wide centered">
+        <h1 class="heading">Restaurant Menu</h1>
+        <table class="ui table celled striped">
+          <thead>
+            <th>Menu Item</th>
+            <th>Price $</th>
+            <th>Order Count</th>
+            <th>Actions</th>
+          </thead>
+          <tbody2>
+          {{#items}}
+            <tr data-id='{{id}}'>
+              <td data-attr='name' contenteditable='true' >
+                {{name}}
+              </td>
+              <td data-attr='price' contenteditable='true'>{{price}}
+              </td>
+              <td data-attr='order_count' contenteditable='true'>{{order_count}}
+              </td>
+              <td>
+                <button onclick=location.href="#/restaurant/{{restaurantId}}/items/{{id}}" data-action='save' class='ui button small green'>Save</button>
+
+                <button onclick=location.href="#/menu" data-action='update' class='ui button small blue'>Update</button>
+
+                <button onclick=location.href="#/restaurants" data-action='delete' class='ui button small red'>Delete</button>
+
+                <button onclick=location.href="#/restaurants" data-action='restaurants' class='ui button small grey'>Back to Restaurants</button>
+              </td>
+            </tr>
+          {{/items}}
+          </tbody2>
+        </table>
+        <a class="ui.label.blue">
+          <i class="plus icon"></i>Add New Menu Item
+        </a>
+      </section>
+    </main>
+  </script>
+
+<script type="text/template" data-id="item_row_template">
+              <tr data-id='{{id}}'>
+
+              <td data-attr='name' contenteditable='true' >{{name}}
+              </td>
+
+              <td data-attr='price' contenteditable='true'>{{price}}
+              </td>
+
+              <td data-attr='order_count' contenteditable='true'>{{order_count}}
+              </td>
+
+              <td>
+                <button data-action='save' class='ui button small green'>Save</button>
+                <button data-action='update' class='ui button small blue'>Update</button>
+                <button data-action='delete' class='ui button small red'>Delete</button>
+                <button onclick=location.href="#/menu" data-action='menu' class='ui button small grey'>Menu</button>
+              </td>
+            </tr>
+</script>
+
+
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/mustache/mustache.js"></script>
+  <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurants</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/semantic-ui/dist/semantic.css">
+</head>
+<body>
+
+    <main class="ui page grid">
+      <section class="eight column wide centered">
+        <h1 class="heading">My Restaurants</h1>
+        <table class="ui table celled striped">
+          <thead>
+            <th>Restaurant Name</th>
+            <th>Location</th>
+            <th>Actions</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <a class="ui label blue">
+          <i class="plus icon"></i>Add New Restaurant
+        </a>
+      </section>
+    </main>
+
+  <script type="text/template" data-id="rest_template">
+    <tr data-id='{{id}}'>
+      <td data-attr='name' contenteditable='true' >
+        {{name}}
+      </td>
+
+      <td data-attr='location' contenteditable='true'>{{location}}
+      </td>
+
+      <td>
+        <button data-action='save' class='ui button small green'>Save</button>
+        <button data-action='update' class='ui button small blue'>Update</button>
+        <button data-action='delete' class='ui button small red'>Delete</button>
+        <button onclick=location.href="#/menu" data-action='menu' class='ui button small grey'>Menu</button>
+      </td>
+    </tr>
+  </script>
+
+  <script type="text/template" data-  id="head_template">
+      <main class="ui page grid">
+      <section class="eight column wide centered">
+        <h1 class="heading">Restaurant Menu</h1>
+        <table class="ui table celled striped">
+          <thead>
+            <th>Menu Item</th>
+            <th>Price</th>
+            <th>Order Count</th>
+            <th>Actions</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <a class="ui label blue">
+          <i class="plus icon"></i>Add New Menu Item
+        </a>
+      </section>
+    </main>
+    <tr data-id='{{restaurantId}}'>
+      <td data-attr='name' contenteditable='true' >
+        {{name}}
+      </td>
+      <td data-attr='price' contenteditable='true'>{{price}}
+      </td>
+      <td data-attr='order_count' contenteditable='true'>{{order_count}}
+      </td>
+      <td>
+        <button data-action='save' class='ui button small green'>Save</button>
+        <button data-action='update' class='ui button small blue'>Update</button>
+        <button data-action='delete' class='ui button small red'>Delete</button>
+    </tr>
+  </script>
+
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/mustache/mustache.js"></script>
+  <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
